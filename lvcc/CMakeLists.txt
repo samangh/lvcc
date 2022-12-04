@@ -22,8 +22,7 @@ target_link_libraries(${TARGET}
   INTERFACE
    LabVIEW
    $<$<CXX_COMPILER_ID:MSVC>:-SAFESEH:NO>
-   "$<$<BOOL:${APPLE}>:-framework CoreFoundation>"
-	)
+   "$<$<BOOL:${APPLE}>:-framework CoreFoundation>")
 
 # The LabVIEW Windows libraries have SAFESEH disabled, so to link we have to do the same
 if(MSVC)

@@ -1,8 +1,31 @@
 #include "globals.h"
+#include "types.h"
 
 #include <string>
 #include <algorithm>
 #include <vector>
+
+MgErr PopulateStringHandle(LStrHandle* strHandle, const std::string& text)
+{
+
+    auto new_length = text.size()+1;
+    auto old_length = (*strHandle != nullptr) ? (**strHandle)->cnt : 1;
+
+    auto err = NumericArrayResize(uB, old_length, (UHandle*)strHandle, new_length);
+    if (err != noErr)
+        return err;
+
+    //Empties the buffer, as NumericArrayResize does not
+    memset(LStrBuf(**strHandle), '\0', new_length);
+
+    //Fills the string buffer with stringData
+    std::copy_n(text.c_str(), new_length, (char*)LStrBuf(**strHandle));
+
+    //Informs the LabVIEW string handle about the size of the size
+    LStrLen(**strHandle) = new_length;
+
+    return noErr;
+}
 
 LStrHandle CreateStringHandle(const std::string& text, MgErr& err)
 {
@@ -62,24 +85,3 @@ void populate_arr1DH_double(MgErr& err, arr1DH_double handle, std::vector<double
         (**handle).elt[i]=data[i];
 }
 
-MgErr PopulateStringHandle(LStrHandle* strHandle, const std::string& text)
-{
-
-    auto new_length = text.size()+1;
-    auto old_length = (*strHandle != nullptr) ? (**strHandle)->cnt : 1;
-
-    auto err = NumericArrayResize(uB, old_length, (UHandle*)strHandle, new_length);
-    if (err != noErr)
-        return err;
-
-    //Empties the buffer, as NumericArrayResize does not
-    memset(LStrBuf(**strHandle), '\0', new_length);
-
-    //Fills the string buffer with stringData
-    std::copy_n(text.c_str(), new_length, (char*)LStrBuf(**strHandle));
-
-    //Informs the LabVIEW string handle about the size of the size
-    LStrLen(**strHandle) = new_length;
-
-    return noErr;
-}

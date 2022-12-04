@@ -29,7 +29,7 @@ target_link_libraries(${TARGET}
   INTERFACE
   PUBLIC
   PRIVATE
-   )
+   lvcc)
 
 include (GenerateExportHeader)
 generate_export_header(${TARGET}
