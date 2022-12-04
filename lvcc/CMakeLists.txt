@@ -27,12 +27,12 @@ target_link_libraries(${TARGET}
 
 # The LabVIEW Windows libraries have SAFESEH disabled, so to link we have to do the same
 if(MSVC)
-	target_link_options(${TARGET} PUBLIC "/SAFESEH:NO")
+	target_link_options(${TARGET} INTERFACE "/SAFESEH:NO")
 endif()
 
 # include (GenerateExportHeader)
 # generate_export_header(${TARGET}
-#   EXPORT_FILE_NAME "${CMAKE_BINARY_DIR}/include/${PROJECT_NAME}/export/${TARGET}.h")
+#    EXPORT_FILE_NAME "${CMAKE_BINARY_DIR}/include/${PROJECT_NAME}/export/${TARGET}.h")
 
 # setup_ide_folders(TARGET ${TARGET} DIR ${CMAKE_CURRENT_SOURCE_DIR})
 

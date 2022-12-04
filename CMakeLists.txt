@@ -37,6 +37,7 @@ get_standard_library_name(STANDARD_LIBRARY)
 ##
 
 add_subdirectory(lvcc)
+add_subdirectory(test)
 
 ##
 ## Compile options
