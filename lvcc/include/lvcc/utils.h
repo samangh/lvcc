@@ -1,6 +1,8 @@
-#include "globals.h"
 #include "types.h"
 
+#include <cstddef>
+#include <cstdint>
+#include <cstring>
 #include <string>
 #include <algorithm>
 #include <vector>
