@@ -1,5 +1,6 @@
-#include <extcode.h>
+#pragma once
 
+#include <extcode.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,13 +8,13 @@ extern "C" {
 #include <lv_prolog.h>
 
 typedef struct {
-    int32_t dimSize;
+    int8_t dimSize;
     int8 elt[1];
 } arr1D_int8;
 typedef arr1D_int8** arr1DH_int8;
 
 typedef struct {
-    int32_t dimSize;
+    int16_t dimSize;
     int16 elt[1];
 } arr1D_int16;
 typedef arr1D_int16** arr1DH_int16;

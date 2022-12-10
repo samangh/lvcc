@@ -1,4 +1,8 @@
 #pragma once
 
-#include "types.h"
-#include "utils.h"
+#include <extcode.h>
+
+#include "types_arr1D.h"
+
+#include "funcs_array.h"
+#include "funcs_string.h"

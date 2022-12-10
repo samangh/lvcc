@@ -89,3 +89,16 @@ compile_commands.json
 # Visual Studion
 /.vs/
 /.cache/
+
+##########
+# LabVEW #
+##########
+
+# Libraries
+*.lvlibp
+*.llb
+
+# Metadata
+*.aliases
+*.lvlps
+.cache/
