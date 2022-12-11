@@ -19,7 +19,6 @@
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 			</Item>
-			<Item Name="libtest.so" Type="Document" URL="../../../build/test/libtest.so"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
