@@ -11,7 +11,7 @@ namespace lvcc {
 
 void ResizeArray(MgErr& err, NumType element_type, int32 dimension, UHandle* handle_ptr, size_t no_elements)
 {
-    err = NumericArrayResizeNoInit(element_type, dimension, handle_ptr, no_elements);
+    err = NumericArrayResize(element_type, dimension, handle_ptr, no_elements);
     //NumericArrayResize for some reasonreturns non-sensial error messages, ignore
     if(err<0 || err>=2048)
         err=mgNoErr;
